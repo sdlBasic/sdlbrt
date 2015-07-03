@@ -1,0 +1,37 @@
+fix many warnigs : claudio daffra <daffra.claudio@gmail.com>
+replacesubstr new sintax: replacesubstr(optional start,string$,search$,replace$)
+complete string migration (missing only the critical rutines that used the interprete variable).
+changed compile style now sdlEngine unzip and basengine are external library
+added displaymode function
+added polyline polygon triangle functions
+added programs binding with basic code embedding into executable
+fixed inputs problems
+fixed debug screen problems
+added --nodefaults parameter on starting
+fixed programs binding (autoexec)
+fixed do...loop commands
+fixed fileRename(), fileCopy() command on Linux side
+added parameters --help --copyright --license
+added html documentation you can call from IDE and shipped within sources and the installation
+fixed bug on printS() command with pen set to 0x000000
+fixed bug on mkDir() command on Linux side
+added scripts for overall compilation, installation and cleaning
+renamed runtime executable in sdlBrt; now sdlBasic is the IDE
+large rework in source organization
+added initial sourcecode of sdlBasicSciTE
+new feature in mingw batch compiler
+make improvements of makefile for possible compilation with win32
+added dual_playfield and screen_colorkey constant
+added lastbob
+added lastsprite
+added lastscreen
+improve makefile and modify initialize rutine for customizable installation
+added screenz command
+moved the mouse cursor (sprite 0) over all screens, now autoupdatesprite has no effect on sprite 0.
+added bobz command
+added Sdlbobz and screenswap bob zorder stuff
+added spritez command
+added Sdlspritez and screenswap sprite zorder stuff
+added getFont command
+added makefile unified
+started changelog

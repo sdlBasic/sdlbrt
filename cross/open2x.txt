@@ -1,0 +1,22 @@
+
+
+ABOUT
+This makefile include cross compiles sdlBrt for gp2x platform  
+
+
+REQUIRES
+
+open2x tool chain
+-----------------
+http://sourceforge.net/projects/open2x/
+
+HW SDL libraries  for hardware accell on gp2x
+-----------------
+source available as part of open2x project
+snv checkout https://svn.sourceforge.net/svnroot/open2x/trunk/libs/SDL-1.2.9
+
+compiled libraries should be installed under $(PREFIX)/lib
+
+
+
+

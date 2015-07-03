@@ -1,0 +1,12 @@
+
+
+ABOUT
+This makefile include compiles sdlBrt for linux platform  
+
+
+REQUIRES
+
+SDL libraries 
+-----------------
+http://www.libsdl.org
+

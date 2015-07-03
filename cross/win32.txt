@@ -1,0 +1,19 @@
+
+
+ABOUT
+This makefile cross compiles sdlBrt for win32 from a linux platform  
+
+
+REQUIRES
+
+mingw32 tool chain
+------------------
+http://mirzam.it.vu.nl/mingw/
+
+
+
+SDL libraries     cross compiled  and installed under $(PREFIX)/lib
+-----------------
+http://www.libsdl.org
+
+
