@@ -1,2 +1,0 @@
-/usr/bin/ar cr libunzip.a  CMakeFiles/unzip.dir/inflate.c.o CMakeFiles/unzip.dir/unzip.c.o
-/usr/bin/ranlib libunzip.a
