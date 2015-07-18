@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vroby/Progetti/sdlbasic/sdlbrt/unzip/inflate.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+
+/home/vroby/Progetti/sdlbasic/sdlbrt/unzip/unzip.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+ctype.h
+-
+

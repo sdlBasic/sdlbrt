@@ -1,0 +1,2 @@
+/usr/bin/ar cr libBASengine.a  CMakeFiles/BASengine.dir/datafunction.c.o CMakeFiles/BASengine.dir/membank.c.o CMakeFiles/BASengine.dir/dir.c.o CMakeFiles/BASengine.dir/file.c.o CMakeFiles/BASengine.dir/strings.c.o CMakeFiles/BASengine.dir/math.c.o
+/usr/bin/ranlib libBASengine.a

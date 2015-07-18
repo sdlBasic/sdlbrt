@@ -1,0 +1,5 @@
+/home/vroby/Progetti/sdlbasic/sdlbrt/BASengine/CMakeFiles/BASengine.dir
+/home/vroby/Progetti/sdlbasic/sdlbrt/SDLengine/CMakeFiles/SDLengine.dir
+/home/vroby/Progetti/sdlbasic/sdlbrt/CMakeFiles/sdlbrt.dir
+/home/vroby/Progetti/sdlbasic/sdlbrt/sqlite3/CMakeFiles/sqlite3.dir
+/home/vroby/Progetti/sdlbasic/sdlbrt/unzip/CMakeFiles/unzip.dir
