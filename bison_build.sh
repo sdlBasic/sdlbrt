@@ -1,2 +1,2 @@
-bison -y sdlBrt_tab.y
+bison -y sdlbrt_tab.y
 #mv ./y.tab.c ./y_tab.c
