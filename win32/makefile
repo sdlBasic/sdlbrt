@@ -12,19 +12,25 @@ compressed=no
 
 CC= gcc
 CPP=g++
-RM=del
+RM=rm
 STRIP=strip
 COMPRESS=upx
 
-#SDL_FLAGS=$(shell sdl-config --cflags)
-#SDL_FLAGS=$(CFLAGS)
+SDL_FLAGS=$(shell sdl-config --cflags)
 
-SDL_LIBS=$(shell sdl-config --libs)
-SDL_LIBS= -lSDL -lpthread
 
-CFLAGS = -Wall -g -O3 $(SDL_FLAGS) -DPLAY_MOD -DUNIX  
+#CFLAGS = -Wall -g -O3 $(SDL_FLAGS) -DPLAY_MOD -DUNIX  
 
-LIBS = $(SDL_LIBS) -lSDL_mixer -lSDL_image -lSDL_ttf -lSDL_net -lsmpeg -lsqlite3
+#LIBS = $(SDL_LIBS) -lSDL_mixer -lSDL_image -lSDL_ttf -lSDL_net -lsmpeg -lsqlite3
+
+
+CFLAGS =  -Wall -mwindows -g -O2 -static -I$(PREFIX)/include
+CFLAGS += -I$(PREFIX)/include/SDL  -Dmain=SDL_main -D_REENTRAT -DPLAY_MOD 
+
+LIBS   = -L$(PREFIX)/lib  -lmingw32 -lSDLmain -lSDL -mwindows -lsmpeg -lSDL_mixer -lSDL_image -lSDL_ttf -lfreetype -lSDL_net -lSDL -lpng -ltiff -lz -ljpeg -lm -lwinmm -ldxguid -lwsock32 -lsqlite3
+
+
+
 
 DEFINES= -DSDLENGINE_SUPPORT -DCD_SUPPORT -DVIDEOMPEG_SUPPORT  -DSOCKET_SUPPORT -DSQLITE_SUPPORT -DMEMORYBANK_SUPPORT
 
