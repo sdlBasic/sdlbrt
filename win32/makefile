@@ -1,7 +1,7 @@
 TARGET= sdlbrt.exe
 
 ifndef prefix
-    prefix=/usr
+    prefix=c:/windows
 endif
 
 exec_prefix=$(prefix)/bin
@@ -12,14 +12,15 @@ compressed=no
 
 CC= gcc
 CPP=g++
-INSTALL=/usr/bin/install
 RM=del
 STRIP=strip
 COMPRESS=upx
 
-SDL_FLAGS=$(shell sdl-config --cflags)
+#SDL_FLAGS=$(shell sdl-config --cflags)
+#SDL_FLAGS=$(CFLAGS)
 
 SDL_LIBS=$(shell sdl-config --libs)
+SDL_LIBS= -lSDL -lpthread
 
 CFLAGS = -Wall -g -O3 $(SDL_FLAGS) -DPLAY_MOD -DUNIX  
 
@@ -40,7 +41,7 @@ UNZIP_SRC= $(wildcard ..\unzip\*.c)
 SDLENGINE_SRC=$(wildcard ..\SDLengine\*.c)
 BASENGINE_SRC=$(wildcard ..\BASengine\*.c)
 
-BAS_SRC=../sdlbrt.c
+BAS_SRC=..\sdlbrt.c
 
 SRC =  $(UNZIP_SRC) $(SDLENGINE_SRC) $(BASENGINE_SRC) $(BAS_SRC) $(SQLITE_SRC)
 
