@@ -1,6 +1,6 @@
 #ifndef _DOCOBJ_H
 #define _DOCOBJ_H
-#if __GNUC__ >= 3
+#if __GNUC__ >=3
 #pragma GCC system_header
 #endif
 
@@ -71,7 +71,8 @@ typedef struct _tagOLECMD {
 } OLECMD;
 
 typedef interface IOleInPlaceSite *LPOLEINPLACESITE;
-typedef interface IEnumOleDocumentViews *LPENUMOLEDOCUMENTVIEWS;
+/* typedef interface IEnumOleDocumentViews *LPENUMOLEDOCUMENTVIEWS;
+   in oleidl.h */
 
 EXTERN_C const IID IID_IContinueCallback;
 EXTERN_C const IID IID_IEnumOleDocumentViews;
@@ -100,8 +101,6 @@ DECLARE_INTERFACE_(IOleDocumentView,IUnknown)
 	STDMETHOD(ApplyViewState)(THIS_ IStream*) PURE;
 	STDMETHOD(Clone)(THIS_ LPOLEINPLACESITE,IOleDocumentView**) PURE;
 };
-
-DECLARE_ENUMERATOR_(IEnumOleDocumentViews,IOleDocumentView);
 
 EXTERN_C const IID IID_IOleDocument;
 #undef INTERFACE

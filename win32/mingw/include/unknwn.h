@@ -58,9 +58,7 @@ HRESULT STDMETHODCALLTYPE IClassFactory_CreateInstance_Proxy(IClassFactory*,IUnk
 HRESULT STDMETHODCALLTYPE IClassFactory_CreateInstance_Stub(IClassFactory*,REFIID,IUnknown**);
 HRESULT STDMETHODCALLTYPE IClassFactory_LockServer_Proxy(IClassFactory*,BOOL);
 HRESULT STDMETHODCALLTYPE IClassFactory_LockServer_Stub(IClassFactory*,BOOL);
-
-#if (!defined (__cplusplus) || defined (CINTERFACE)) \
-    && defined (COBJMACROS)
+#ifdef COBJMACROS
 #define IUnknown_QueryInterface(T,r,O) (T)->lpVtbl->QueryInterface(T,r,O)
 #define IUnknown_AddRef(T) (T)->lpVtbl->AddRef(T)
 #define IUnknown_Release(T) (T)->lpVtbl->Release(T)
@@ -69,7 +67,7 @@ HRESULT STDMETHODCALLTYPE IClassFactory_LockServer_Stub(IClassFactory*,BOOL);
 #define IClassFactory_Release(T) (T)->lpVtbl->Release(T)
 #define IClassFactory_CreateInstance(T,p,r,O) (T)->lpVtbl->CreateInstance(T,p,r,O)
 #define IClassFactory_LockServer(T,f) (T)->lpVtbl->LockServer(T,f)
-#endif /* COBJMACROS */
+#endif
 #ifdef __cplusplus
 }
 #endif

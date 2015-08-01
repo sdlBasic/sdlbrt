@@ -80,28 +80,12 @@
 # ifndef __stdcall
 #  define __stdcall __attribute__((stdcall))
 # endif
-# ifndef __int64
-#  define __int64 long long
-# endif
-# ifndef __int32
-#  define __int32 long
-# endif
-# ifndef __int16
-#  define __int16 int
-# endif
-# ifndef __int8
-#  define __int8 char
-# endif
-# ifndef __small
-#  define __small char
-# endif
-# ifndef __hyper
-#  define __hyper long long
-# endif
+# undef __int64
+# define __int64 long long
 #endif /* __GNUC__ */
 
-#define __MINGW32_VERSION 3.1
+#define __MINGW32_VERSION 3.0
 #define __MINGW32_MAJOR_VERSION 3
-#define __MINGW32_MINOR_VERSION 1
+#define __MINGW32_MINOR_VERSION 0
 
 #endif /* __MINGW_H */

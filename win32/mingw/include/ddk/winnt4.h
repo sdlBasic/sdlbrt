@@ -45,7 +45,7 @@ typedef struct _ZONE_HEADER {
   ULONG  TotalSegmentSize;
 } ZONE_HEADER, *PZONE_HEADER;
 
-static __inline PVOID
+static inline PVOID
 ExAllocateFromZone(
   IN PZONE_HEADER  Zone)
 {
@@ -62,7 +62,7 @@ ExExtendZone(
   IN PVOID  Segment,
   IN ULONG  SegmentSize);
 
-static __inline PVOID
+static inline PVOID
 ExFreeToZone(
   IN PZONE_HEADER  Zone,
   IN PVOID  Block)

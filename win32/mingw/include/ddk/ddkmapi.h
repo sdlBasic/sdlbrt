@@ -204,18 +204,18 @@ typedef struct _DDLOCKOUT {
   DWORD  dwFormatFlags;
   DWORD  dwFormatFourCC;
   DWORD  dwFormatBitCount;
-  _ANONYMOUS_UNION union {
+  union {
     DWORD  dwRBitMask;
     DWORD  dwYBitMask;
-  } DUMMYUNIONNAME;
-  _ANONYMOUS_UNION union {
+  };
+  union {
     DWORD  dwGBitMask;
     DWORD  dwUBitMask;
-  } DUMMYUNIONNAME2;
-  _ANONYMOUS_UNION union {
+  };
+  union {
     DWORD  dwBBitMask;
     DWORD  dwVBitMask;
-  } DUMMYUNIONNAME3;
+  };
 } DDLOCKOUT, FAR *LPDDLOCKOUT;
 
 /* LPDD_NOTIFYCALLBACK.dwFlags constants */

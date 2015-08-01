@@ -22,9 +22,9 @@
  *  DISCLAIMED. This includes but is not limited to warranties of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * $Revision: 1.14 $
+ * $Revision: 1.12 $
  * $Author: earnie $
- * $Date: 2003/09/15 14:18:35 $
+ * $Date: 2003/03/11 15:34:26 $
  *
  */
 

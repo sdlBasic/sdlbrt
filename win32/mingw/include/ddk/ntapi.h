@@ -26,7 +26,7 @@
 #ifndef __NTAPI_H
 #define __NTAPI_H
 
-#if __GNUC__ >= 3
+#if __GNUC__ >=3
 #pragma GCC system_header
 #endif
 
@@ -119,7 +119,7 @@ typedef enum _SYSTEM_INFORMATION_CLASS {
 	SystemNotImplemented10 = 40,
 	SystemDockInformation = 41,
 	SystemNotImplemented11 = 41,
-	/* SystemPowerInformation = 42, Conflicts with POWER_INFORMATION_LEVEL 1 */
+	//SystemPowerInformation = 42, Conflicts with POWER_INFORMATION_LEVEL
 	SystemInvalidInfoClass2 = 42,
 	SystemProcessorSpeedInformation = 43,
 	SystemInvalidInfoClass3 = 43,
@@ -754,10 +754,8 @@ ZwSetInformationObject(
 	IN ULONG  ObjectInformationLength);
 
 /* OBJECT_BASIC_INFORMATION.Attributes constants */
-/* also in winbase.h */
 #define HANDLE_FLAG_INHERIT               0x01
 #define HANDLE_FLAG_PROTECT_FROM_CLOSE    0x02
-/* end winbase.h */
 #define PERMANENT                         0x10
 #define EXCLUSIVE                         0x20
 
@@ -775,7 +773,7 @@ typedef struct _OBJECT_BASIC_INFORMATION {
 	LARGE_INTEGER  CreateTime;
 } OBJECT_BASIC_INFORMATION, *POBJECT_BASIC_INFORMATION;
 #if 0
-/* FIXME: Enable later */
+// FIXME: Enable later
 typedef struct _OBJECT_TYPE_INFORMATION {
 	UNICODE_STRING  Name;
 	ULONG  ObjectCount;
@@ -1406,12 +1404,11 @@ typedef struct _PROCESS_ACCESS_TOKEN {
 } PROCESS_ACCESS_TOKEN, *PPROCESS_ACCESS_TOKEN;
 
 /* DefaultHardErrorMode constants */
-/* also in winbase.h */
 #define SEM_FAILCRITICALERRORS            0x0001
 #define SEM_NOGPFAULTERRORBOX             0x0002
 #define SEM_NOALIGNMENTFAULTEXCEPT        0x0004
 #define SEM_NOOPENFILEERRORBOX            0x8000
-/* end winbase.h */
+
 typedef struct _POOLED_USAGE_AND_LIMITS {
 	ULONG  PeakPagedPoolUsage;
 	ULONG  PagedPoolUsage;
@@ -1452,7 +1449,7 @@ typedef struct _PROCESS_PRIORITY_CLASS {
 #define DRIVE_RAMDISK                     6
 
 typedef struct _PROCESS_DEVICEMAP_INFORMATION {
-	_ANONYMOUS_UNION union {
+	union {
 		struct {
 		  HANDLE  DirectoryHandle;
 		} Set;
@@ -1460,7 +1457,7 @@ typedef struct _PROCESS_DEVICEMAP_INFORMATION {
 		  ULONG  DriveMap;
 		  UCHAR  DriveType[32];
 		} Query;
-	} DUMMYUNIONNAME;
+	};
 } PROCESS_DEVICEMAP_INFORMATION, *PPROCESS_DEVICEMAP_INFORMATION;
 
 typedef struct _PROCESS_SESSION_INFORMATION {
@@ -1952,7 +1949,6 @@ typedef enum _LPC_TYPE {
 	LPC_DEBUG_EVENT,
 	LPC_ERROR_EVENT,
 	LPC_CONNECTION_REQUEST,
-	LPC_CONNECTION_REFUSED,
   LPC_MAXIMUM
 } LPC_TYPE;
 

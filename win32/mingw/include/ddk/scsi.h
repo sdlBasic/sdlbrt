@@ -247,18 +247,13 @@ typedef union _CDB {
     UCHAR  Control;
   } PLAY_AUDIO_MSF, *PPLAY_AUDIO_MSF;
   
-/* FIXME: Should the union be anonymous in C++ too?  If so,
-   can't define named types _LBA and _MSF within anonymous union
-   for C++. */ 	
   struct _PLAY_CD {
     UCHAR  OperationCode;
     UCHAR  Reserved1 : 1;
     UCHAR  CMSF : 1;
     UCHAR  ExpectedSectorType : 3;
     UCHAR  Lun : 3;
-#ifndef __cplusplus
-  _ANONYMOUS_UNION
-#endif
+  
   union {
       struct _LBA {
             UCHAR  StartingBlockAddress[4];
@@ -275,10 +270,10 @@ typedef union _CDB {
             UCHAR  EndingF;
             UCHAR  Reserved2;
       } MSF;
-  #ifndef __cplusplus
-  }DUMMYUNIONNAME;
+  #ifdef __cplusplus
+  } u;
   #else
-  }u;
+  };
   #endif
   
     UCHAR  Audio : 1;
@@ -907,14 +902,14 @@ typedef struct _INQUIRYDATA {
   UCHAR  DeviceTypeQualifier : 3;
   UCHAR  DeviceTypeModifier : 7;
   UCHAR  RemovableMedia : 1;
-  _ANONYMOUS_UNION union {
+  union {
     UCHAR  Versions;
-    _ANONYMOUS_STRUCT struct {
+    struct {
       UCHAR  ANSIVersion : 3;
       UCHAR  ECMAVersion : 3;
       UCHAR  ISOVersion : 2;
-    } DUMMYSTRUCTNAME;
-  } DUMMYUNIONNAME;
+    };
+  };
   UCHAR  ResponseDataFormat : 4;
   UCHAR  HiSupport : 1;
   UCHAR  NormACA : 1;
@@ -1501,17 +1496,17 @@ typedef struct _MODE_INFO_EXCEPTIONS {
   UCHAR  Reserved1 : 1;
   UCHAR  PSBit : 1;
   UCHAR  PageLength;
-  _ANONYMOUS_UNION union {
+  union {
     UCHAR  Flags;
-    _ANONYMOUS_STRUCT struct {
+    struct {
       UCHAR  LogErr : 1;
       UCHAR  Reserved2 : 1;
       UCHAR  Test : 1;
       UCHAR  Dexcpt : 1;
       UCHAR  Reserved3 : 3;
       UCHAR  Perf : 1;
-    } DUMMYSTRUCTNAME;
-  } DUMMYUNIONNAME;
+    };
+  };
   UCHAR  ReportMethod : 4;
   UCHAR  Reserved4 : 4;
   UCHAR  IntervalTimer[4];
@@ -1597,7 +1592,7 @@ typedef struct _TAPE_POSITION_DATA {
 /* This structure is used to convert little endian ULONGs
    to SCSI CDB big endians values. */
 typedef union _EIGHT_BYTE {
-  _ANONYMOUS_STRUCT struct {
+  struct {
     UCHAR  Byte0;
     UCHAR  Byte1;
     UCHAR  Byte2;
@@ -1606,25 +1601,25 @@ typedef union _EIGHT_BYTE {
     UCHAR  Byte5;
     UCHAR  Byte6;
     UCHAR  Byte7;
-  } DUMMYSTRUCTNAME;
+  };
   ULONGLONG  AsULongLong;
 } EIGHT_BYTE, *PEIGHT_BYTE;
 
 typedef union _FOUR_BYTE {
-  _ANONYMOUS_STRUCT struct {
+  struct {
     UCHAR  Byte0;
     UCHAR  Byte1;
     UCHAR  Byte2;
     UCHAR  Byte3;
-  } DUMMYSTRUCTNAME;
+  };
   ULONG  AsULong;
 } FOUR_BYTE, *PFOUR_BYTE;
 
 typedef union _TWO_BYTE {
-  _ANONYMOUS_STRUCT struct {
+  struct {
     UCHAR  Byte0;
     UCHAR  Byte1;
-  } DUMMYSTRUCTNAME;
+  };
   USHORT  AsUShort;
 } TWO_BYTE, *PTWO_BYTE;
 
