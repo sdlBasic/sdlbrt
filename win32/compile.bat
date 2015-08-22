@@ -6,6 +6,12 @@ set MINGWPATH=mingw
 
 @path %MINGWPATH%\bin;%PATH%
 
-make.exe cleanall
+rem make.exe cleanall
+del ../BASengine/*.o
+del ../SDLengine/*.o
+del ../sqlite3/*.o
+del ../unzip/*.o
+del ../*.o
+del sdlbrt.exe
 make.exe
 @echo compilation complete
