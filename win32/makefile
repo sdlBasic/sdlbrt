@@ -42,12 +42,12 @@ DEFINES += -Dfont_prefix=\"$(font_prefix)\"
 CFLAGS += $(EXTRA_CFLAGS) $(DEFINES)
 LIBS += $(EXTRA_LIBS)
 
-SQLITE_SRC=$(wildcard ..\sqlite3\*.c)
-UNZIP_SRC= $(wildcard ..\unzip\*.c)
-SDLENGINE_SRC=$(wildcard ..\SDLengine\*.c)
-BASENGINE_SRC=$(wildcard ..\BASengine\*.c)
+SQLITE_SRC=$(wildcard ../sqlite3/*.c)
+UNZIP_SRC= $(wildcard ../unzip/*.c)
+SDLENGINE_SRC=$(wildcard ../SDLengine/*.c)
+BASENGINE_SRC=$(wildcard ../BASengine/*.c)
 
-BAS_SRC=..\sdlbrt.c
+BAS_SRC=../sdlbrt.c
 
 SRC =  $(UNZIP_SRC) $(SDLENGINE_SRC) $(BASENGINE_SRC) $(BAS_SRC) $(SQLITE_SRC)
 

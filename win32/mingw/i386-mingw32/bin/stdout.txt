@@ -1,0 +1,15 @@
+Usage: Z:\cross-tools\i386-mingw32msvc\bin\plaympeg.exe [options] file ...
+Where the options are one of:
+	--noaudio	     Don't play audio stream
+	--novideo	     Don't play video stream
+	--fullscreen	     Play MPEG in fullscreen mode
+	--double or -2	     Play MPEG at double size
+	--loop or -l	     Play MPEG over and over
+	--bilinear	     Use software bilinear filtering
+	--volume N or -v N   Set audio volume to N (0-100)
+	--title T or -t T  Set window's title to T
+	--scale wxh or -s wxh  Play MPEG at given resolution
+	--seek N or -S N     Skip N bytes
+	--help or -h
+	--version or -V
+Specifying - as filename will use stdin for input
