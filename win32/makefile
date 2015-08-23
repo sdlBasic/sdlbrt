@@ -7,7 +7,7 @@ endif
 exec_prefix=$(prefix)/bin
 font_prefix=$(prefix)/share/fonts/ttf
 
-stripped=no
+stripped=yes
 compressed=no
 
 CC= gcc
@@ -19,12 +19,12 @@ COMPRESS=upx
 SDL_FLAGS=$(shell sdl-config --cflags)
 
 
-#CFLAGS = -Wall -g -O3 $(SDL_FLAGS) -DPLAY_MOD -DUNIX  
+#CFLAGS = -Wall -g -O2 $(SDL_FLAGS) -DPLAY_MOD -DUNIX  
 
 #LIBS = $(SDL_LIBS) -lSDL_mixer -lSDL_image -lSDL_ttf -lSDL_net -lsmpeg -lsqlite3
 
 
-CFLAGS =  -Wall -mwindows -g -O2 -static -I$(PREFIX)/include
+CFLAGS =  -Wall -mwindows -g -O2 -I$(PREFIX)/include
 CFLAGS += -I$(PREFIX)/include/SDL  -Dmain=SDL_main -D_REENTRAT -DPLAY_MOD 
 
 LIBS   = -L$(PREFIX)/lib  -lmingw32 -lSDLmain -lSDL -mwindows -lsmpeg -lSDL_mixer -lSDL_image -lSDL_ttf -lfreetype -lSDL_net -lSDL -lpng -ltiff -lz -ljpeg -lm -lwinmm -ldxguid -lwsock32 -lsqlite3

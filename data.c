@@ -13,24 +13,22 @@ void formatNumber( char *buffer, Number n )
 
     /* no floating point? */
     if (floor(n) == n) {
-        sprintf( buffer, NUMBER_INT_FORMAT, n );
-
-    } else {
+        sprintf( buffer, NUMBER_INT_FORMAT, n);
+    } 
+    else {
         /* format with floating point */
-        sprintf( buffer, NUMBER_FLOAT_FORMAT,n );
+        sprintf( buffer, NUMBER_FLOAT_FORMAT, n);
 
         /* search for non-zero */
-        for( i = strlen(buffer)-1; i > 0; i-- ) {
+        for( i = strlen(buffer)-1; i > 0; i--) {
             if (buffer[i] != '0') {
                 break;
-            } else if (buffer[i-1] != '.') {
+            } 
+	    else if (buffer[i-1] != '.') {
                 buffer[i] = '\0';
             }
         }
     }
-
-
-
 }
 
 

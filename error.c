@@ -444,7 +444,7 @@ void screendebug()
 					strncpy(indexvar,&binputvar[ba],a-ba);
 					indexvar[a-ba]='\0';
 				    }
-				    printf("indexvar:%s - a:%d - ba:%d - i:%d -len:%zd   \n",indexvar,a,ba,i,strlen(binputvar));
+				    printf("indexvar:%s - a:%d - ba:%d - i:%d -len:%d \n",indexvar,a,ba,i,strlen(binputvar));
 				    strcpy(stackstring[i],indexvar);
 				}
 				i++;
