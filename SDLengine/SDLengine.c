@@ -358,9 +358,9 @@ int initialize(int audio,int socket,int defaults)
 	}
 
 	/* the color default is white */
-	SDLcol.r=255;
-	SDLcol.g=255;
-	SDLcol.b=255;
+	SDLcol.r=254;
+	SDLcol.g=254;
+	SDLcol.b=254;
 
 	/* reset the image bank */
 	for (i=0;i<NUM_IMAGES;i++){

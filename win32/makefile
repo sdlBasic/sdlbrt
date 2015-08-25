@@ -24,7 +24,7 @@ SDL_FLAGS=$(shell sdl-config --cflags)
 #LIBS = $(SDL_LIBS) -lSDL_mixer -lSDL_image -lSDL_ttf -lSDL_net -lsmpeg -lsqlite3
 
 
-CFLAGS =  -Wall -mwindows -g -O2 -I$(PREFIX)/include
+CFLAGS =  -Wall -mwindows -g -O3 -Waggressive-loop-optimizations -I$(PREFIX)/include
 CFLAGS += -I$(PREFIX)/include/SDL  -Dmain=SDL_main -D_REENTRAT -DPLAY_MOD 
 
 LIBS   = -L$(PREFIX)/lib  -lmingw32 -lSDLmain -lSDL -mwindows -lsmpeg -lSDL_mixer -lSDL_image -lSDL_ttf -lfreetype -lSDL_net -lSDL -lpng -ltiff -lz -ljpeg -lm -lwinmm -ldxguid -lwsock32 -lsqlite3
