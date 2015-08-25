@@ -2,7 +2,7 @@
     Name:       sdlBrt.c
     Purpose:    Core (wxBasic) version for sdlBasic
     Author:     David Cuny
-    modify __vroby__ <__vroby__@libero.it>
+    modify vroby65 <vroby.mail@gmail.com>
     Copyright:  (c) 2001 David Cuny <dcuny@lanset.com>
     Licence:    LGPL
 */
@@ -282,11 +282,6 @@ int main(int argc, char **argv)
 	strcpy(fontPath,getenv("WINDIR"));
 	strcat(fontPath,"\\fonts\\DejaVuSans.ttf\0");
 	if (!fileExist(fontPath))fontPath=".\\DejaVuSans.ttf";
-//#elif defined(GP2X)
-//	fontPath=(char *) malloc(256);
-//	strcpy(fontPath,"/mnt/sd/sdlBasic/share/fonts/ttf/dejavu/DejaVuSans.ttf");
-//	if (!fileExist(fontPath))strcpy(fontPath,"./DejaVuSans.ttf");
-    	//printf(" font:%s| \n",fontPath); //Debug
 #else
 	fontPath=(char *) malloc(256);
 	strcpy(fontPath,font_prefix);
@@ -321,20 +316,6 @@ int main(int argc, char **argv)
 	while(cmdArgv[1][r]!='/')r--;
 	strncpy(curdir,cmdArgv[1],r);
 	chdir(curdir);
-    }
-#elif AMIGA
-    {
-	r=strlen(cmdArgv[1]);
-	curdir=(char *)malloc(r+1);
-
-	if (curdir)
-	{
-	    STRPTR path;
-	    strcpy(curdir,cmdArgv[1]);
-	    path = FilePart(curdir);
-	    *path = 0;
-	    chdir(curdir);
-	}
     }
 #else
     if(cmdArgv[1][2]=='\\'){

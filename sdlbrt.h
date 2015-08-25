@@ -1,24 +1,18 @@
 /*
     Name:       sdlBasic.h
     Purpose:    Core (wxBasic) version for sdlBasic
-    Author:     David Cuny - __vroby__ based on sdlBasic.c
+    Author:     David Cuny - vroby65 based on sdlBasic.c
     Copyright:  (c) 2001 David Cuny <dcuny@lanset.com>
     Licence:    LGPL
 */
 
 
 #define PROGNAME    "sdlbasic runtime"
-#define RELEASE     "2013"
-#define DATEOF      "11-Giu-2013"
+#define RELEASE     "2015"
+#define DATEOF      "25-08-2015"
 #define COPYRIGHT   "(c) 2001 David Cuny and sdlBasic team"
 #define LICENSE     "Lesser GNU Public License"
 #define SDLBASIC    1
-
-#ifdef AMIGA
-#define Node ExecNode
-#include <exec/nodes.h>
-#undef Node
-#endif
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -30,17 +24,8 @@
 #include <ctype.h>
 #include <limits.h>
 #include <float.h>
-#ifdef __amigaos4__
-#include <sys/stat.h>
-#endif
 
-/* This piece of code allows sdlBasic to compile on FreeBSD 5.3 without <malloc.h> include problem */
-/* Contributed by Tails92 */
-#if !defined(FBSD) && !defined(__amigaos4__) && !defined(__APPLE__)
-#include <malloc.h>
-#else
 #include <stdlib.h>
-#endif
 
 #if defined(WIN32)
 #include <windows.h>
