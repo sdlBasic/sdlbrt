@@ -357,11 +357,6 @@ int initialize(int audio,int socket,int defaults)
 	    fadedelay[i]=0;
 	}
 
-	/* the color default is white */
-	SDLcol.r=254;
-	SDLcol.g=254;
-	SDLcol.b=254;
-
 	/* reset the image bank */
 	for (i=0;i<NUM_IMAGES;i++){
 		SDLimage[i]=NULL;
@@ -449,6 +444,11 @@ int initialize(int audio,int socket,int defaults)
 	SystemWidth =  SystemInfo->current_w; 
 	SystemHeight = SystemInfo->current_h; 
 #endif	
+
+	/* the color default is white */
+	SDLcol.r=(Uint8)255;
+	SDLcol.g=(Uint8)255;
+	SDLcol.b=(Uint8)255;
 
 	/*default settings*/
 	if (defaults!=0){
