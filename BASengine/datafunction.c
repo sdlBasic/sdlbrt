@@ -2,7 +2,7 @@
     Name:       datafunction.c
     Purpose:    data function for sdlBasic
     Author:     __vroby__
-    Copyright:  (c) 2004 Viola Roberto <__vroby__@libero.it>
+    Copyright:  (c) 2015 Viola Roberto <vroby.mail@gmail.com>
     Licence:    LGPL
 */
 

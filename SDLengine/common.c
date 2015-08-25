@@ -18,8 +18,8 @@ ________________________________________________________________________________
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-    __vroby__
-    __vroby__@libero.it
+    vroby65
+    vroby.mail@gmail.com
 
 _________________________________________________________________________________________________________________________
 */
@@ -49,28 +49,6 @@ int stopkey()
 		SDLerr(stderr,"%s",error_description);
 	return -1;
     }
-    //*
-    #if defined(GP2X)
-
-// ivanixcu: remove debugger for commercial games
-
-		if ( nodebug )
-		{
-    		return 0;
-		}
-
-   	// SDLjoy=SDL_JoystickOpen(0);
-    	SDL_JoystickUpdate();
-  	if (SDL_JoystickGetButton(SDLjoy[0], 16) && SDL_JoystickGetButton(SDLjoy[0], 17)){
-		error_description="vol+ vol- pressed by the user\n";
-		error_type=2;
-		SDLerr(stderr,"%s",error_description);
-		return -1;
- 	}
-    	//SDL_JoystickClose(SDLjoy);
-
-    #endif
-    //*/
     return 0;
 }
 //________________________________________________________________________________________________________________________________________
@@ -192,4 +170,3 @@ int autotimer()
 	return 0;
 }
 //________________________________________________________________________________________________________________________________________
-

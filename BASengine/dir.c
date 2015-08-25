@@ -2,7 +2,7 @@
     Name:       dir.c
     Purpose:    dir support for wxBasic/sdlBasic
     Author:     Viola Roberto __vroby__
-    Copyright:  (c) 2003 Viola Roberto <__vroby__@libero.it>
+    Copyright:  (c) 2015 Viola Roberto <vroby.mail@gmail.com>
     Licence:    LGPL
 */
 
@@ -15,7 +15,7 @@
 
 #define LVLDIR 8
 
-#if defined(UNIX) || defined(__MORPHOS__) || defined(__amigaos4__)
+#if defined(UNIX)
 	#include <unistd.h>
 	#include <dirent.h>
 	DIR *hDir[LVLDIR];
@@ -80,7 +80,7 @@ return dir_path;
 
 char *dirfirst(char *path)
 {
-#if defined(UNIX) || defined(AMIGA)
+#if defined(UNIX)
 	int i ;
 
 	lvldir++;
@@ -150,7 +150,7 @@ char *dirfirst(char *path)
 /* dir: listed in directory path the next entry or none if it's at the end list */
 char *dirnext()
 {
-#if defined(UNIX) || defined(AMIGA)
+#if defined(UNIX)
 	s_file[lvldir]=readdir(hDir[lvldir]);
 	while( s_file[lvldir]!=NULL){
 	    if (memcmp( &s_file[lvldir]->d_name, prefix[lvldir], strlen(prefix[lvldir]) )==0)
@@ -184,7 +184,7 @@ int direxists(char *path)
 {
 
 
-#if defined(UNIX) || defined(AMIGA)
+#if defined(UNIX)
 	DIR *hDirEx;
 
 	hDirEx = opendir(path);

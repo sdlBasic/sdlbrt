@@ -19,8 +19,8 @@ ________________________________________________________________________________
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-    __vroby__
-    __vroby__@libero.it
+    vroby65
+    vroby.mail@gmail.com
 
 _________________________________________________________________________________________________________________________
 
@@ -55,11 +55,7 @@ int setdefaults(int w,int h, int bpp, int mode)
 //setdisplay(w,h,bpp,0=screen|1=window |2=resizable)			: open the screen/window in double buffer.
 int setdisplay(int w,int h, int bpp, int mode)
 {
-#if defined(GP2X)
-    #define SAFERES() setdisplay(320,240,0,1)
-#else
     #define SAFERES() setdisplay(640,480,0,1)
-#endif
 	//GL_display=0;
 	display_mode=mode;
 	SDLnoAlphaChannel=0;//alpha enabled
@@ -77,7 +73,7 @@ int setdisplay(int w,int h, int bpp, int mode)
 			SDLerr(stderr, "SDLengine error - setDisplay: Can't set video mode: %d ",mode);
 			return -1;
 		}
-		#if defined(UNIX) || defined(__MORPHOS__) || defined(__amigaos4__)
+		#if defined(UNIX) 
 		SDLnoAlphaChannel=0;
 		#else
 		SDLnoAlphaChannel=1;

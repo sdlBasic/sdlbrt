@@ -17,8 +17,8 @@ ________________________________________________________________________________
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-    __vroby__
-    __vroby__@libero.it
+    vroby65
+    vroby.mail@gmail.com
 
 _________________________________________________________________________________________________________________________
 */
@@ -37,13 +37,7 @@ ________________________________________________________________________________
 #include "SDL_net.h"
 #include "../unzip/unzip.h"
 
-#ifndef __APPLE__
 #include "smpeg.h"
-#else
-#include "smpeg/smpeg.h"
-#endif
-
-
 
 #ifndef MIN
 #define MIN(x,y)     (((x) < (y)) ? (x) : (y))
@@ -1142,4 +1136,3 @@ char *getlocalip();
 #ifdef __cplusplus
 }
 #endif
-

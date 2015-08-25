@@ -17,8 +17,8 @@ ________________________________________________________________________________
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-    __vroby__
-    __vroby__@libero.it
+    vroby65_
+    vroby.mail@gmail.com
 
 _________________________________________________________________________________________________________________________
 */
@@ -37,7 +37,7 @@ char *readdata();
 
 #define LVLDIR 8
 
-#if defined(UNIX) || defined(__MORPHOS__) || defined(__amigaos4__)
+#if defined(UNIX) 
 	#include <unistd.h>
 	#include <dirent.h>
 	extern DIR *hDir[LVLDIR];

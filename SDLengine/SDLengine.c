@@ -17,8 +17,8 @@ ________________________________________________________________________________
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-    __vroby__
-    __vroby__@libero.it
+    vroby65
+    vroby.mail@gmail.com
 
 _________________________________________________________________________________________________________________________
 */
@@ -270,13 +270,7 @@ int initialize(int audio,int socket,int defaults)
 	if (audio!=0){
 	    /* Open the audio device */
 	    // parameters: 11025 | 22050 | 44100 - AUDIO_U8 | AUDIO_S16SYS - 1 | 2 - 512 | 8192
-	    #ifdef OPENBSD
-	    if ( Mix_OpenAudio(44100, AUDIO_U8,	2, 8192) < 0 ) {
-	    #elif GP2X
-	    if ( Mix_OpenAudio(22050, AUDIO_U8, 2, 256) < 0 ) {
-	    #else
 	    if ( Mix_OpenAudio(44100, AUDIO_S16SYS,	2, 8192) < 0 ) {
-	    #endif
 		SDLerr(stderr,"Warning: Can't set 44100 Hz 16-bit stereo audio\n- Reason: %s\n",SDL_GetError());
 		enabledsound=0;
 	    }
@@ -420,7 +414,7 @@ int initialize(int audio,int socket,int defaults)
 	color(3,rgb(192,192,255)); //azzurro
 	color(4,rgb(255,0,0)); //red
 	color(5,rgb(255,255,0)); //magenta
-	color(6,rgb(128,80,40)); //marrone
+	color(6,rgb(128,80,40)); //brown
 	color(7,rgb(255,255,255)); //white
 	color(8,rgb(128,128,128)); //grigio
 	color(9,rgb(128,128,255)); //blu chiaro
@@ -435,15 +429,10 @@ int initialize(int audio,int socket,int defaults)
 	/*default colorkey */
 	colorkey=-1;
 	
-	/*load system resolution  gp2x does not support well SDL_GetVideoInfo */
-#if defined(GP2X)
-	SystemWidth = 320; 
-	SystemHeight = 240; 
-#else
+	/* using SDL_GetVideoInfo to find SystemWidth and SystemHeight 
 	SystemInfo = SDL_GetVideoInfo(); 
 	SystemWidth =  SystemInfo->current_w; 
 	SystemHeight = SystemInfo->current_h; 
-#endif	
 
 	/* the color default is white */
 	SDLcol.r=(Uint8)255;

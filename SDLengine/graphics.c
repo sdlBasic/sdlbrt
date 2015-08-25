@@ -19,8 +19,8 @@ ________________________________________________________________________________
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-    __vroby__
-    __vroby__@libero.it
+    vroby65
+    vroby.mail@gmail.com
 
 _________________________________________________________________________________________________________________________
 
@@ -387,9 +387,6 @@ int paint(int x,int y)
 	int src_col,col;
 	char pm;
 
-
-
-
 	if (SDL_MUSTLOCK(SDLscreen[c_screen]))
 		SDL_LockSurface(SDLscreen[c_screen]);
 
@@ -399,49 +396,43 @@ int paint(int x,int y)
 	ystart=y;
 	src_col=getpixel(SDLscreen[c_screen],x,y);//point(x,y);
 	putpixel(SDLscreen[c_screen],x,y,(Uint32)SDL_MapRGB(SDLdisplay->format,SDLcol.r,SDLcol.g,SDLcol.b));//dot(x,y);
-	col=getpixel(SDLscreen[c_screen],x,y);//point(x,y);
-    pm=2;
-    if (col==src_col)return -1;
+    	col=getpixel(SDLscreen[c_screen],x,y);//point(x,y);
+    	pm=2;
+    	if (col==src_col)return -1;
 
-    while(0==0) {
-	//if (point(x,y)==src_col) {
-	if (getpixel(SDLscreen[c_screen],x,y)== src_col) {
-	putpixel(SDLscreen[c_screen],x,y,(Uint32)SDL_MapRGB(SDLdisplay->format,SDLcol.r,SDLcol.g,SDLcol.b));//dot(x,y);
-		paintmap[y*screenwidth()+x]=pm;
-    	}
+	while(0==0) {
+		if (getpixel(SDLscreen[c_screen],x,y)== src_col) {
+			putpixel(SDLscreen[c_screen],x,y,(Uint32)SDL_MapRGB(SDLdisplay->format,SDLcol.r,SDLcol.g,SDLcol.b));//dot(x,y);
+			paintmap[y*screenwidth()+x]=pm;
+    		}
 
-	//if (point(x+1,y)==src_col && (x+1) < screenwidth()) {
-	if (getpixel(SDLscreen[c_screen],x+1,y)==src_col && (x+1) < screenwidth()) {
-		    x=x+1;
-		    pm=1;
-		}
-	//else if (point(x-1,y)==src_col && (x-1) > 0 ) {
-	else if (getpixel(SDLscreen[c_screen],x-1,y)==src_col && (x-1) >= 0 ) {
-		    x=x-1;
-		    pm=2;
-		}
-	//else if (point(x,y+1)==src_col && (y+1) < screenheight()) {
-	else if (getpixel(SDLscreen[c_screen],x,y+1)==src_col && (y+1) < screenheight()) {
-		    y=y+1;
-		    pm=3;
-		}
-	//else if (point(x,y-1)==src_col && (y-1) > 0) {
-	else if (getpixel(SDLscreen[c_screen],x,y-1)==src_col && (y-1) >= 0) {
-		    y=y-1;
-		    pm=4;
-		}
-	else
-		{
-		if (x==xstart && y==ystart)break;
-
-		if (paintmap[y*screenwidth()+x]==1)
-			x=x-1;
-		else if (paintmap[y*screenwidth()+x]==2)
+		if (getpixel(SDLscreen[c_screen],x+1,y)==src_col && (x+1) < screenwidth()) {
 			x=x+1;
-		else if (paintmap[y*screenwidth()+x]==3)
-			y=y-1;
-		else if (paintmap[y*screenwidth()+x]==4)
-			y=y+1;
+			pm=1;
+		}
+		else if (getpixel(SDLscreen[c_screen],x-1,y)==src_col && (x-1) >= 0 ) {
+			x=x-1;
+			pm=2;
+		}
+		else if (getpixel(SDLscreen[c_screen],x,y+1)==src_col && (y+1) < screenheight()) {
+		    	y=y+1;
+			pm=3;
+		}
+		else if (getpixel(SDLscreen[c_screen],x,y-1)==src_col && (y-1) >= 0) {
+		    	y=y-1;
+			pm=4;
+		}
+		else{
+			if (x==xstart && y==ystart)break;
+
+			if (paintmap[y*screenwidth()+x]==1)
+				x=x-1;
+			else if (paintmap[y*screenwidth()+x]==2)
+				x=x+1;
+			else if (paintmap[y*screenwidth()+x]==3)
+				y=y-1;
+			else if (paintmap[y*screenwidth()+x]==4)
+				y=y+1;
 		}
 	}
 	free(paintmap);
@@ -450,7 +441,7 @@ int paint(int x,int y)
 		SDL_UnlockSurface(SDLscreen[c_screen]);
 
 	if (autotimer()!=0)return -1;
-    return 0;
+	return 0;
 }
 //_______________________________________________________________________________________________________________________
 
