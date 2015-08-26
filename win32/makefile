@@ -13,6 +13,7 @@ compressed=no
 CC= gcc
 CPP=g++
 RM=rm
+WINDRES=windres
 STRIP=strip
 COMPRESS=upx
 
@@ -59,6 +60,7 @@ OBJECT := $(SRC:%.c=%.o)
 #OBJECT +=$(wildcard BASengine/*.o)
 #OBJECT +=$(wildcard sqlite3/*.o)
 
+RC= ../rc.o
 
 
 all: 		$(TARGET)
@@ -78,7 +80,7 @@ $(OBJECT):		%.o: 	%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 
-sdlbrt.o:	sdlbrt.rc
+$(RC):
 	$(WINDRES) sdlbrt.rc sdlbrt.o
 
 
