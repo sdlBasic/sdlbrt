@@ -81,7 +81,7 @@ $(OBJECT):		%.o: 	%.c
 
 
 $(RC):
-	$(WINDRES) sdlbrt.rc sdlbrt.o
+	$(WINDRES) ../sdlbrt.rc ../rc.o
 
 
 cleanall:
